@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}Writing - Matthew Cline{% endblock %}
+
+{% block content %}
+<h1>Writing</h1>
+
+{% if essays %}
+<section class="essays-list">
+    {% for essay in essays %}
+    <article class="essay-preview">
+        <h2><a href="/essays/{{ essay.slug }}.html">{{ essay.title }}</a></h2>
+        <time>{{ essay.date }}</time>
+        <p>{{ essay.preview }}</p>
+    </article>
+    {% endfor %}
+</section>
+{% else %}
+<p>No essays found.</p>
+{% endif %}
+{% endblock %}

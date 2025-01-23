@@ -4,14 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Matthew Cline{% endblock %}</title>
+    {% if config.base_url %}
+    <link rel="stylesheet" href="{{ config.base_url }}/static/css/style.css">
+    {% else %}
     <link rel="stylesheet" href="/static/css/style.css">
+    {% endif %}
 </head>
 <body>
     <nav>
+        {% if config.base_url %}
+        <a href="{{ config.base_url }}/index.html">~/home</a>
+        <a href="{{ config.base_url }}/writing.html">~/writing</a>
+        <a href="{{ config.base_url }}/projects.html">~/projects</a>
+        <a href="{{ config.base_url }}/about.html">~/about</a>
+        {% else %}
         <a href="/index.html">~/home</a>
         <a href="/writing.html">~/writing</a>
         <a href="/projects.html">~/projects</a>
         <a href="/about.html">~/about</a>
+        {% endif %}
     </nav>
 
     <main>

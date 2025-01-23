@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}Home - Matthew Cline{% endblock %}
+
+{% block content %}
+<h1>Matthew Cline</h1>
+<p>writing, coding, teaching</p>
+
+{% if recent_essays %}
+<section>
+    <h2>Recent Writing</h2>
+    {% for essay in recent_essays %}
+    <div>
+        <a href="/essays/{{ essay.slug }}.html">{{ essay.title }}</a>
+        <span>{{ essay.date }}</span>
+    </div>
+    {% endfor %}
+</section>
+{% endif %}
+{% endblock %}

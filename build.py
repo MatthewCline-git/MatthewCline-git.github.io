@@ -9,10 +9,10 @@ from feedgen.feed import FeedGenerator
 
 # Site Configuration
 CONFIG = {
-    'base_url': '/docs',  # Empty for root, '/repo-name' for project page
+    'base_url': '/docs',  # Change this to your actual repo name
     'site_name': 'Matthew Cline',
     'site_description': 'writing, coding, teaching',
-    'site_url': 'https://your-username.github.io',  # Update this
+    'site_url': 'https://MatthewCline-git.github.io/',
     'author': 'Matthew Cline'
 }
 
@@ -54,8 +54,12 @@ def copy_static_files():
 def read_essay_file(filepath: Path):
     """Read and parse a markdown essay file with frontmatter"""
     try:
-        with open(filepath) as f:
-            post = frontmatter.load(f)
+        # Read the file content first
+        with open(filepath, 'r', encoding='utf-8') as f:
+            file_content = f.read()
+            
+        # Parse the frontmatter
+        post = frontmatter.Frontmatter.read(file_content)
         
         # Convert markdown to HTML with extensions
         md = markdown.Markdown(extensions=[
@@ -67,7 +71,7 @@ def read_essay_file(filepath: Path):
             'markdown.extensions.meta'          # For metadata in markdown
         ])
         
-        content = md.convert(post.content)
+        content = md.convert(post["body"])
         
         # Extract preview (first paragraph)
         # Remove HTML tags for cleaner preview
@@ -118,6 +122,7 @@ def generate_rss_feed(essays):
 
 def build_site():
     """Build the entire site"""
+
     try:
         # Ensure required directories exist
         content_path = Path('content/essays')

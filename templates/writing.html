@@ -9,7 +9,7 @@
 <section class="essays-list">
     {% for essay in essays %}
     <article class="essay-preview">
-        <h2><a href="/essays/{{ essay.slug }}.html">{{ essay.title }}</a></h2>
+        <h2><a href="{{ config.base_url }}/essays/{{ essay.slug }}.html"></h2>
         <time>{{ essay.date }}</time>
         <p>{{ essay.preview }}</p>
     </article>

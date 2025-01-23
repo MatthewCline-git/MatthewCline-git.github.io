@@ -11,8 +11,8 @@
     <h2>Recent Writing</h2>
     {% for essay in recent_essays %}
     <div>
-        <a href="/essays/{{ essay.slug }}.html">{{ essay.title }}</a>
-        <span>{{ essay.date }}</span>
+        <a href="{{ config.base_url }}/essays/{{ essay.slug }}.html">
+        <span>{{ essay.title }}</span>
     </div>
     {% endfor %}
 </section>

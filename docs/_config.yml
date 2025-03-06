@@ -1,4 +1,3 @@
 title: My Essays
 description: A collection of my essays
-markdown: kramdown
-theme: minima
+theme: jekyll-theme-primer

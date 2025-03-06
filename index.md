@@ -3,6 +3,6 @@ layout: home
 title: ""
 ---
 
-# My Essays
+# Home
 
-Welcome to my collection of essays.
+Welcome.

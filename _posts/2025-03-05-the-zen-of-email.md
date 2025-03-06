@@ -20,8 +20,8 @@ Though you needn't _check_ your email all the time
 
 Say what you mean, even (and especially) at the expense of awkwardness
 
-If you don't know the answer to a question, acknowledge receipt anyway
-and promise an answer by a specific future date
+If you don't know the answer to a question, acknowledge receipt
+and forecast an answer by a specific date + time
 
 Concise is better than verbose
 

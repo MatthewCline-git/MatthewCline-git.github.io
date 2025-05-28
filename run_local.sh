@@ -1,1 +1,2 @@
-bundle exec jekyll serve --livereload --incremental --draft
+rm -rf _site/
+bundle exec jekyll serve --livereload --incremental --drafts
